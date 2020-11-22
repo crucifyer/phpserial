@@ -1,0 +1,21 @@
+{
+    "name": "crucifyer/phpserial",
+    "description": "serial port access class",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Song Hyo-Jin",
+            "email": "shj@xenosi.de",
+            "homepage": "https://github.com/crucifyer/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xeno\\": "src/"
+        }
+    },
+    "require": {}
+}
