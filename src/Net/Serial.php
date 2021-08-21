@@ -9,7 +9,7 @@ class Serial
 
 	public function __construct($port = '/dev/serial0', $baudrate = 115200, $mode = 'r+b') {
 		if(!file_exists($port)) throw new \ErrorException("$port not found");
-		shell_exec(sprintf('stty -F /dev/serial0 %s cs8 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts', $baudrate));
+		shell_exec(sprintf('stty -F '.$port.' %s cs8 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts', $baudrate));
 		$this->fp = fopen($port, $mode);
 		if(!$this->fp) throw new \ErrorException("$port open failed");
 		stream_set_blocking($this->fp, false);
